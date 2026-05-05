@@ -1,4 +1,4 @@
-# ZT Blog
+# MZT Blog
 
 一个简洁优雅的 Jekyll 技术博客。
 
