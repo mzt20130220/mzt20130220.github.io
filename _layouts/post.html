@@ -5,7 +5,12 @@ layout: default
     <div class="container">
         <section class="post-content">
             <article class="post full-post">
-                <time class="post-date">{{ page.date | date: "%Y-%m-%d" }}</time>
+                <div class="post-header">
+                    <time class="post-date">{{ page.date | date: "%Y-%m-%d" }}</time>
+                    {% if page.categories.size > 0 %}
+                    <span class="post-category">{{ page.categories[0] }}</span>
+                    {% endif %}
+                </div>
                 <h2 class="post-title">{{ page.title }}</h2>
                 <div class="post-tags">
                     {% for tag in page.tags %}
