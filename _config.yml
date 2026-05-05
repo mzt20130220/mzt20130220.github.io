@@ -1,10 +1,10 @@
-title: ZT Blog
-email: ztblog@example.com
+title: MZT Blog
+email: mzt20130220@example.com
 description: >-
   A simple, elegant blog about technology and programming.
 baseurl: ""
-url: "https://ztblog.github.io"
-github_username: ztblog
+url: "https://mzt20130220.github.io"
+github_username: mzt20130220
 
 permalink: /:title/
 
@@ -23,7 +23,7 @@ defaults:
       type: posts
     values:
       layout: post
-      author: ZT Blog
+      author: mzt20130220
 
 kramdown:
   input: GFM
