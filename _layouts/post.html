@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<main class="main">
+    <div class="container">
+        <section class="post-content">
+            <article class="post full-post">
+                <time class="post-date">{{ page.date | date: "%Y-%m-%d" }}</time>
+                <h2 class="post-title">{{ page.title }}</h2>
+                <div class="post-tags">
+                    {% for tag in page.tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                <div class="post-body">
+                    {{ content }}
+                </div>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>最新文章</h3>
+                <ul class="recent-posts">
+                    {% for post in site.posts limit:5 %}
+                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>

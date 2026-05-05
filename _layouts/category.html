@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<main class="main">
+    <div class="container">
+        <section class="category-content">
+            <article class="post">
+                <h2 class="post-title">分类：{{ page.title }}</h2>
+                
+                {% for post in page.posts %}
+                <div class="archive-item">
+                    <time class="post-date">{{ post.date | date: "%Y-%m-%d" }}</time>
+                    <h3 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <p class="post-excerpt">{{ post.excerpt }}</p>
+                </div>
+                {% endfor %}
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="widget">
+                <h3>所有分类</h3>
+                <ul class="category-list">
+                    {% for category in site.categories %}
+                    <li><a href="{{ category.url | relative_url }}">{{ category[0] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </div>
+</main>

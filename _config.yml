@@ -1,0 +1,52 @@
+title: ZT Blog
+email: ztblog@example.com
+description: >-
+  A simple, elegant blog about technology and programming.
+baseurl: ""
+url: "https://ztblog.github.io"
+github_username: ztblog
+
+permalink: /:title/
+
+markdown: kramdown
+highlighter: rouge
+timezone: Asia/Shanghai
+
+collections:
+  posts:
+    output: true
+    permalink: /posts/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      author: ZT Blog
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+sass:
+  style: compressed
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
+
+feed:
+  path: atom.xml
