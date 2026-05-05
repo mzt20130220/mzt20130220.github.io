@@ -6,7 +6,12 @@ layout: default
         <section class="posts">
             {% for post in site.posts %}
             <article class="post">
-                <time class="post-date">{{ post.date | date: "%Y-%m-%d" }}</time>
+                <div class="post-header">
+                    <time class="post-date">{{ post.date | date: "%Y-%m-%d" }}</time>
+                    {% if post.categories.size > 0 %}
+                    <span class="post-category">{{ post.categories[0] }}</span>
+                    {% endif %}
+                </div>
                 <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
                 <p class="post-excerpt">{{ post.excerpt }}</p>
                 <div class="post-tags">
